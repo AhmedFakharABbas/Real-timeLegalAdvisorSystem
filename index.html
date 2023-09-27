@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal adviser  </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+
+    .form-control{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #17A2B8;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+.text-info {
+  color: #d9be65!important;
+}
+
+.bg-light {
+    background-color: white!important;
+}
+.btn-info {
+    color: #fff;
+    background-color:#2C5F2DFF!important;
+    border-color:#3f4751!important; 
+    }
+  
+.form-control:focus{
+   
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.logo{
+  height:200px ;
+  width: auto;
+}
+.table{
+  width: 100%!important; 
+  border-collapse: collapse!important; 
+}
+.table .thead-dark th {
+   
+    background-color:#2C5F2DFF;
+
+    }
+
+  td, th { 
+  padding: 6px!important; 
+  text-align: left!important; 
+}
+    .counter {
+     
+    padding: 20px 0;
+    border-radius: 50%;
+}
+
+.count-title {
+ 
+    font-size: 50px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #d9be65;
+}
+
+.count-text {
+  
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #d9be65;
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #4ad1e5;
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+  .logo{
+  height:150px ;
+  width: auto;
+}
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+}
+</style>
+</head>
+
+
+
+
+<body>
+
+    
+<div class="container">
+
+  <nav class="navbar navbar-light bg-light">
+ 
+      
+    <span class="navbar-brand mx-auto"><img src="logo.jpeg" alt="logo" class="logo"></span>
+  
+  </nav>
+<!-- As a heading -->
+
+
+    
+    <div class="col-md-10 ">
+
+  
+    <form id="create-form">
+        <br>
+        
+        <input type="text"class="form-control"id="query" placeholder="Enter i need legal advice related to murder laws in Pakistan">
+        <br>
+        <button type="submit" class="btn btn-info" id="get-button" disabled>Recommendation</button>
+    </form>
+</div>
+    </div> 
+<!--Counter-->
+    <div id="perediction" class="container" hidden>
+      <div class="row">
+        
+         <div class="col text-center">
+       
+        <p>Expert system think that you are talking about upto</p>
+        </div>
+        
+                 
+        
+      </div>
+      
+      
+       
+        <div  class="row text-center">
+          <div class="col-md-2"> 
+            <div class="counter">
+         
+            <h1 id="fiftext" style="color: #2C5F2DFF;" class="count-text"></h1>
+           <h2>
+             <span style="font-size:30px ;" id="detfifnumber" class="timer count-title count-number"></span>
+             <span   style="color: #d9be65; font-size:30px">%</span>
+            </h2>
+            
+          </div></div>
+          <div class="col-md-2"> 
+            <div class="counter">
+         
+            <h1 id="ttext" style="color: #2C5F2DFF;" class="count-text"></h1>
+           <h2>
+             <span style="font-size: 30px;" id="dettnumber" class="timer count-title count-number"></span>
+             <span  style="color: #d9be65; font-size: 30px;">%</span>
+            </h2>
+            
+          </div></div>
+                  <div class="col-md-3">
+                    
+                 <div class="counter">
+         
+          <h1 id="ftext" style="color: #2C5F2DFF;" class="count-text"></h1>
+         <h2>
+           <span id="detfnumber" class="timer count-title count-number"></span>
+           <span  style="color: #d9be65;">%</span>
+          </h2>
+          
+        </div>
+      </div>
+
+      <div class="col-md-2"> 
+        <div class="counter">
+     
+        <h1 id="stext" style="color: #2C5F2DFF; " class="count-text"></h1>
+       <h2>
+         <span style="font-size: 30px;" id="detsnumber" class="timer count-title count-number"></span>
+         <span  style="color: #d9be65; font-size: 30px;">%</span>
+        </h2>
+        
+      </div></div>
+      <div class="col-md-2"> 
+        <div class="counter">
+     
+        <h1 id="forthtext"  style="color: #2C5F2DFF;" class="count-text"></h1>
+       <h2>
+         <span style="font-size: 30px;" id="detforthnumber" class="timer count-title count-number"></span>
+         <span  style="color: #d9be65; font-size: 30px">%</span>
+        </h2>
+        
+      </div></div>
+            </div>
+    </div>
+   <!--Table-->
+   <div class="container-fluid"> 
+    
+     <p id=predictioncounter></p>
+   <table  hidden class="table  table-striped table-hover ">
+    <thead class="thead-dark">
+      <tr>
+        <th>Section</th>
+        <th>Clauses</th>
+        <th>Maximum Punishment</th>
+        <th>Minimum Punishment</th>
+        <th>Institute</th>
+        
+      </tr>
+    </thead>
+      <tbody>
+       
+      </tbody>
+    
+    </table>  
+   </div>
+<script src="jquery.js"></script>
+<script src="scripet.js"></script>
+</body>
+</html>
